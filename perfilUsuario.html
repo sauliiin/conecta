@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPX</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styleU.css">
+    <link rel="stylesheet" href="styles/perfilUsuario.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html"><img src="img/logoMaoObra.png" alt="Logo Mãos a Obra" class="logo"> </a>
+        <div class="menu">
+            <ul class="menu-lista">
+                <li class="menu-selecoes">
+                    <h3><a href="maini.html">Comunidade</a></h3>
+                </li>
+                <li class="menu-selecoes">
+                    <h3 id="login-container"><a href="login.html">Login</a></h3>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-usuario">
+        <div class="body-perfil">
+            <div class="perfil">
+                <div>
+                    <ul class="perfil-informacoes">
+                        <li class="perfil-lista">
+                            <img id="profilePreview" src="img/foto-perfil-generica.jpg"
+                                alt="Pré-visualização da foto de perfil">
+                        </li>
+                        <li class="perfil-lista">
+                            <input class="perfil-input" id="nome" name="nomeUsuario" placeholder="Nome" required>
+                        </li>
+                        <li class="servicos-lista">
+                            <label class="servicos-label" id="cpfvalidator" for="cpfUsuario">CPF</label>
+                            <input class="servicos-input" type="text" id="cpfUsuario" placeholder="000.000.000-00"
+                                oninput="anyKeyPressed(event)" maxlength="14">
+                        </li>
+                        <li class="servicos-lista">
+                            <label class="servicos-label" for="telefone">Telefone</label>
+                            <input class="servicos-input" type="tel" name="telefone" id="telefone"
+                                placeholder="Número de Telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}">
+                        </li>
+                        <li class="servicos-lista">
+                            <label class="servicos-label" for="instagram">Redes Sociais</label>
+                            <input class="servicos-input" type="text" id="instagram" name="instagram"
+                                placeholder="Instagram">
+                        </li>
+                        <li class="perfil-botao">
+                            <button class="null" id="btn" type="button">Salvar Alterações</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="servico-cadastrado">
+                <ul>
+                    <li class="servicos-lista">
+                        <label class="servicos-label" for="descricaoServico">Tipo de Serviço</label>
+                        <input class="servicos-input" type="text" id="servico" name="tipoServico"
+                            placeholder="Descrição do Serviço" required>
+                    </li>
+                    <li class="servicos-lista">
+                        <label class="servicos-label" id="serv" for="descricaoServico">Descrição do Serviço</label>
+                        <input class="servicos-input" type="text" id="descricao" name="descricaoServico"
+                            placeholder="Descrição do Serviço" required>
+                    </li>
+                    <li class="servicos-lista">
+                        <button class="servicos-botao" id="btn" type="button">Cadastrar Serviço</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="JS/script_services.js"></script>
+    <script src="JS/cpfValidator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header {
+    padding: 0 5%;
+}
+
+.main-index{
+    padding: 0 5%;
+}
+
+.lista-carros {
+    max-width: 80%;
+}
+
+.perquisa-carro {
+    align-items: center;
+}
+
+.carros-imagem:hover {
+    transition: 0.6s;
+    box-shadow: 0px 0px 20px 4px #032e5f;
+    scale: 105%;
+}
+.carros-imagem {
+    transition: 0.6s;
+    box-shadow: 0px 0px 0px 0px #032e5f;
+    scale: 100%;
+}
+
+.lista{
+    text-align: center;
+    display: flex;
+    font-size: 18px;
+    padding: 1em 0 0.5em 0;
+}
+
+.lista-carros{
+    position: initial;
+    margin: 0.5em;
+    justify-content: space-between;
+}
+
+.carros-imagem{
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    margin: 1em;
+    padding: 0.5em;
+    
+}
+
+.carros-descricao-negrito{    
+    font-weight: 600;
+}
+
+#search {
+    width: 300px;
+    padding: 10px;
+    border: 1px none #ccc;
+    border-radius: 4px;
+    position: relative; /* Para posicionar o dropdown corretamente */
+}
+#results {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Para posicionar em relação ao campo de busca */
+    background: white;
+    width: 300px; /* Deve corresponder à largura do campo de busca */
+    z-index: 1;
+    margin-top: 73px; /* Espaço entre o campo de busca e os resultados */
+}
+.result-item {
+    padding: 8px;
+    cursor: pointer;
+}
+.result-item.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+.form-pesquisa {
+    font-size: 15px;
+}
+
+.label-filtro {
+    margin-left: 10px;
+}
+
+.inp-filtro{
+    text-decoration: none;
+}
+
+.anuncio:hover {
+    transition: 0.8s;
+}
+
+.anuncio {
+    margin-top: 60px;
+    margin-left: 50px;
+    border:#d1d1d1;
+    border-style: solid;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+  }
+
+  .navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Estilo dos itens principais do menu */
+  .dropdown {
+    margin-top: 3.5%;
+    margin-right: 3%;
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    color: white;
+  }
+
+  /* Container do menu suspenso */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 15px;
+    min-width: 200px;
+    z-index: 1;
+  }
+
+  /* Estilo dos links dentro do menu suspenso */
+  .dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #8a8a8a;
+    border-radius: 10px;
+  }
+
+  /* Mostrar o menu suspenso ao passar o mouse */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .menuImg {
+    padding: 6px 8px;
+    border-radius: 35px;
+    background-color: #FFFFFF;
+  }
+

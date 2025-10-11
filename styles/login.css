@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-login {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-de-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 1.5em;
+}
+
+.login{
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    justify-content: center;
+    border: 1px solid var(--azul-escuro);
+    border-radius: 10px;
+}
+
+.login-img{    
+    height: auto;      
+    display: block;      
+    margin: 0 auto 20px;
+}
+
+.login-titulo{
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--preto);
+    text-align: center;
+}
+
+.login-div{
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.login-filtro{    
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-label{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.login-input{   
+    outline: none;
+    padding: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+.login-botao{
+    width: 100%;
+    padding: 10px;
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 22px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 1em 1em 1em 0em;
+    transition: 0.6s;
+    box-shadow: 1px 1px 1px 0px var(--azul-claro);
+    font-weight: 500;
+}
+
+.login-botao:hover{
+    background-color: var(--azul);
+    text-decoration: none
+}
+
+.login-cadastro{
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--preto);
+}
+
+.login-cadastro a{
+    color: var(--azul-escuro);
+    text-decoration: none;
+}
+
+.login-cadastro a:hover{
+    text-decoration: underline;
+}
+
+.login-google{
+    margin-bottom: 20px;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.login-google-text{
+    align-items: center;
+}
+
+.divider{
+    text-align: center;
+    margin: 0 0 1em;
+}

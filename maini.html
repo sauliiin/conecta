@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPX</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styleindex.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html"><img src="img/logoMaoObra.png" alt="Logo Mãos a Obra" class="logo"></a>
+        <div class="container">
+            <div class="perquisa-carro">
+                <form action="#" class="form-pesquisa">
+                    <div class="input-filtro">
+                        <label class="label-filtro" for="search">Serviço</label>
+                        <input class="input" type="text" id="search" placeholder="Digite para buscar..." autocomplete="on">
+                        <div id="results"></div>
+                    </div>
+                    <div class="botoes-container">
+                        <button class="botao-atualizar" type="button" onclick="location.reload();">
+                            <img class="img-atualizar" src="img/reload.png" alt="Atualizar">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="menu">
+            <ul class="menu-lista">
+                <li class="menu-selecoes">
+                    <h3><a href="perfilUsuario.html">Meu Perfil</a></h3>
+                </li>
+                <li class="menu-selecoes">
+                    <h3 id="login-container"><a href="login.html">Login</a></h3>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-index">
+            <div>
+            <ul class="lista">
+                <li class="lista-apresentacao">
+                    <img src="img/Lupa_icon.png" alt="" class="icones-inicial">
+                    <h3 class="texto-inicial">
+                        Confira o perfil dos profissionais disponíveis e encontre um especialista que se encaixe nas
+                        suas necessidades ou preferências.
+                    </h3>
+                </li>
+                <li class="lista-apresentacao">
+                    <img src="img/Tel_icon.png" alt="" class="icones-inicial">
+                    <h3 class="texto-inicial">
+                        Envie uma mensagem diretamente para o profissional.
+                    </h3>
+                </li>
+                <li class="lista-apresentacao">
+                    <img src="img/Calendario_icon.png" alt="" class="icones-inicial">
+                    <h3 class="texto-inicial">
+                        Neste contato, tire dúvidas sobre preços, verifique disponibilidade de agenda, e confirmando seu
+                        interesse, solicite o atendimento.
+                    </h3>
+                </li>
+                <li class="lista-apresentacao">
+                    <img src="img/Cel_icon.png" alt="" class="icones-inicial">
+                    <h3 class="texto-inicial">
+                        Após o serviço você poderá deixar sua opinião sobre. Tudo isso de forma gratuita, simples e
+                        rápida.
+                    </h3>
+                </li>
+            </ul>
+        </div>
+            <!-- Dinamicamente gerado pelo script -->
+    </main>
+    <footer class="rodape">
+        <ul class="rodape-lista">
+            <li class="lista-link">
+                <p class="rodape-texto">® 2025 Conecta Mulher.</p>
+            </li>
+            <li class="lista-link">
+                <a href="#">Idioma</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Termos</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Privacidade</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Sobre a empresa</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Ajuda</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="./JS/script_index.js"></script>
+</body>
+
+</html>

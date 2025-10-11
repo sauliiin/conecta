@@ -1,0 +1,222 @@
+/* --- ----------------------------- --- */
+/* --- ESTILOS PARA O SITE CONECTA MULHER --- */
+/* --- ----------------------------- --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --- GERAL E RESET BÁSICO --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #333;
+    background-color: #fdfdfd;
+}
+
+.logo-img{
+    padding: 1em;
+    height: 100px;   
+}
+
+/* --- CABEÇALHO FIXO (HEADER) --- */
+.header-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    padding: 0 5%;
+    box-sizing: border-box;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    background-color: transparent;
+    box-shadow: none;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.header-fixo.scrolled {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color:#5a0096;
+}
+
+.header-fixo nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5a0096;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.header-fixo.scrolled nav a {
+    color: white;
+}
+
+.header-fixo nav a:hover {
+    color: #E5B3FF;
+}
+
+.header-fixo nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #E5B3FF;
+    transition: width 0.3s ease;
+}
+
+.header-fixo nav a:hover::after {
+    width: 100%;
+}
+
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.conteudo-principal {
+    padding-top: 120px;
+}
+
+
+/* --- ESTILOS GERAIS DAS SEÇÕES --- */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.secao-foto {
+    padding: 0;
+}
+
+.secao-topo {
+    min-height: calc(100vh - 120px); 
+    padding: 0;
+    position: relative; /* Essencial para o posicionamento absoluto dos filhos */
+    scroll-margin-top: 120px
+}
+
+.secao-info {
+    background-color: white;
+}
+
+.secao-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.secao-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    color: #666;
+}
+
+/* --- COMPONENTES ESPECÍFICOS (IMAGEM) --- */
+.imagem-container {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    background-image: url('img/mulheres1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- ANIMAÇÃO DE REVELAÇÃO (SCROLL REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ESTILOS PARA ABERTURA COM VÍDEO --- */
+.video-fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* REGRA UNIFICADA PARA TODOS OS H1 DA ANIMAÇÃO */
+.secao-topo h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Evita que o texto quebre em telas muito estreitas */
+    max-width: 800px;
+    margin: 0;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- ESTILOS PÓS-VÍDEO --- */
+.header-fixo.video-ended-state {
+    background-color: #5a0096;
+}
+
+.header-fixo.video-ended-state nav a {
+    color: white;
+}
+
+.secao-topo.video-ended-state {
+    background-color: #5a0096;
+    transition: background-color 1s ease;
+}
+
+/* Ajuste para subir o texto final, como solicitado anteriormente */
+.secao-topo.video-ended-state #h1-final {
+    /* Move o texto final 15% da altura da tela para cima, a partir do centro */
+    transform: translate(-50%, -50%) translateY(-15vh);
+}
+
+#h1-final {
+    margin-top: 6%;
+    font-size: 4.0rem;
+    font-weight: bolder;
+}
+
+#h1-inicial {
+    margin-top: -3%;
+    font-size: 4.2rem;
+}
+
+#h1-second {
+  margin: 25% auto 0;        /* top 20%, centraliza horizontal com auto nas laterais */
+  font-size: 2.2rem;
+  color: #fff;
+  max-width: 90%;          /* evita ficar muito largo em telas grandes */
+  text-align: center;        /* centraliza o texto dentro do bloco */
+  text-align: justify;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7); 
+}

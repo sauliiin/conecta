@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+}
+
+.main-usuario{    
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-de-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin: 1.5em; 
+}
+
+.usuario{ 
+    width: 150%;
+    max-width: 400px;
+    padding: 30px;
+    justify-content: center; 
+    background-color: #d2a8ff;
+    border: 1px  #5a0096; /* Bordas claras */
+    box-shadow: 6px 6px 10px #5a00969c; /* Sombra suave */
+    border-radius: 15px;
+    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.1), -12px -12px 24px rgba(255, 255, 255, 0.9);
+}
+
+.cadastro-usuario{
+    padding: 0.1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.usuario-label{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.usuario-input{  
+    padding: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+.usuario-botao:hover {
+    transition: 0.6s;
+    box-shadow: 0px 0px 4px 2px #000000;
+    font-size: 15px;
+    background-color: var(--azul);
+}
+
+.usuario-botao {
+    border-radius: 22px;
+    margin: 2em;
+    padding: 10px;
+    transition: 0.6s;
+    background-color: var(--azul-claro);
+    box-shadow: 0px 0px 1px 1px var(--azul-claro);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+#profilePreview {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.651);
+    width: 150px; /* Largura fixa */
+    height: 150px; /* Altura fixa */
+    aspect-ratio: 2 / 1; /* Largura é 50% da altura */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-bottom: 25px; /* Espaçamento inferior */
+    border-radius: 20px; /* Bordas arredondadas */
+    display: block; /* Garante que o elemento seja um bloco */
+}
+
+.usuario-input[type="file"] {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#fotoLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--azul-escuro);
+}
+
+#comeback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 65px;
+    font-size: 20px;
+}
+
+#imhere {
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#imhere:hover {
+    transition: 0.6s;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+#foto { 
+    border: 2px solid var(--azul-escuro);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.usuario-input-hidden {
+    display: none; 
+}
+
+#customFileButton {
+    background-color: var(--azul-claro);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#customFileButton:hover {
+    background-color: var(--azul);
+}
+
+#fileName {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+

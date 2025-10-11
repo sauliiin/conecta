@@ -1,0 +1,75 @@
+@import url("login.css");
+@import url("header.css");
+@import url("paginaInicial.css");
+@import url("cadastroUsuario.css");
+@import url("servicosCadastrados.css");
+@import url("perfilUsuario.css");
+@import url("rodape.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+    --cor-de-fundo: #f4ebfd;
+    --branco: #FFFFFF;
+    --azul-claro: #AFDDFF;
+    --azul-escuro:#102842;
+    --azul: #60B5FF;
+    --vermelho: #FF0000;
+    --azul-desgrade:  linear-gradient(98deg, #011F26 35.49%, #025E73 165.37%);
+    --fonte-principal: 'Poppins', sans-serif;    
+    --fonte-secundaria: 'Josefin Sans', sans-serif;
+    --preto: #000000;
+    --cinza: #d0d3d8;
+    --bege: #BFB78F;
+    --laranja: #FF9149;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;  
+}
+
+.user-block {
+    border: 1px  #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    background-color: #f9f9f9;
+    box-shadow: 6px 6px 10px #5a00969c; 
+}
+
+.user-block h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.servicos-informacoes {
+    list-style: none;
+    padding: 0;
+}
+
+.servicos-informacoes li {
+    margin-bottom: 12px;
+}
+
+.servicos-input,
+.perfil-input {
+    display: inline-block;
+    padding: 8px;
+    font-size: 14px;
+    color: #555;
+    background-color: #eee;
+    border: 1px  #ccc;
+    border-radius: 4px;
+    cursor: not-allowed;
+    text-align: center;
+}
+
+.login{
+    background-color: #d2a8ff;
+    border: 1px  #5a0096; /* Bordas claras */
+    box-shadow: 6px 6px 10px #5a00969c; /* Sombra suave */
+}

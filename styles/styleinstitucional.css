@@ -1,0 +1,275 @@
+@import url("login.css");
+@import url("header.css");
+@import url("paginaInicial.css");
+@import url("cadastroUsuario.css");
+@import url("servicosCadastrados.css");
+@import url("perfilUsuario.css");
+@import url("rodape.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+    --cor-de-fundo: #EBECEE;
+    --branco: #FFFFFF;
+    --cinza-claro: #F9F9F9;
+    --cinza-borda: #DDD;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --fonte-principal: 'Poppins', sans-serif;    
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Principal */
+.main-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px; /* Espaçamento entre os quadros */
+    justify-content: center; /* Centraliza os quadros */
+    padding: 20px;
+}
+
+/* Quadros de Usuário */
+.user-block {
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--sombra);
+    width: 450px; /* Largura fixa de 20% da página */
+    aspect-ratio: 2 / 1; /* Largura é 50% da altura */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do Usuário */
+.user-image {
+    width: 60%; /* A largura permanece 60% da largura do quadro */
+    height: 200px; /* Ajusta automaticamente a altura */
+    aspect-ratio: 3 / 4; /* Define uma proporção menor para reduzir a altura */
+    border-radius: 10px;
+    border: 3px solid var(--cinza-borda);
+    margin-top: 20px;
+    object-fit: cover; /* Garante que a imagem seja cortada corretamente */
+    margin-bottom: 10px;
+}
+
+/* Título */
+.user-block h3 {
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--sombra);
+    width: 350px; /* Largura fixa */
+    height: auto; /* Altura automática para permitir mais linhas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: auto; /* Adiciona rolagem, caso necessário */
+}
+
+/* Lista de Informações */
+.servicos-informacoes {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.servicos-lista, .perfil-lista {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.servicos-label, .perfil-label {
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.servicos-input, .perfil-input {
+    background-color: var(--cinza-claro);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    color: #555;
+    cursor: not-allowed;
+    text-align: left;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .user-block {
+        width: 40%; /* 2 quadros por linha em telas médias */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .user-block {
+        width: 80%; /* 1 quadro por linha em telas pequenas */
+    }
+}
+
+.menu-selecoes {
+    font-size: 18px;
+    transition: 0,5s;
+}
+.menu-selecoes:hover{
+    transition: 0,5s;
+    text-shadow: #333;
+    font-weight: bold;
+}
+
+.lista-apresentacao {
+    display: flex;
+    flex: 1;
+    width: 15%;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 10px;
+    height: 140px;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens na direção horizontal */
+    text-align: justify; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento entre os itens da lista */
+}
+
+.icones-inicial {
+    margin-bottom: 10px; /* Espaçamento abaixo do ícone */
+    width: 60px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 60px;
+}
+
+.texto-inicial {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5; /* Para melhorar a legibilidade */
+    text-align: justify; /* Centraliza o texto */
+    margin: 0;
+    width: 80%;
+}
+
+.lista {
+    display: flex; /* Transforma a lista em um layout flexível */
+    justify-content: space-between; /* Garante que os blocos sejam distribuídos */
+    gap: 25px; /* Aumenta o espaçamento horizontal entre os blocos */
+    padding: 10px;
+    margin: 0;
+    list-style: none; /* Remove os marcadores da lista */
+}
+
+/* Estilização geral da seção institucional */
+.institucional {
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    padding: 40px; /* Espaçamento interno para afastar conteúdo das bordas */
+    margin: 20px auto; /* Espaçamento externo e centralização */
+    border-radius: 10px; /* Cantos arredondados para os blocos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor */
+}
+
+/* Estilo do título principal */
+.institucional-texto h2 {
+    text-transform: lowercase; /* Título todo em minúsculo */
+    text-align: center; /* Centraliza o título */
+    font-size: 2rem; /* Ajusta o tamanho da fonte */
+    font-weight: bold; /* Destaca o título */
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+/* Estilo para a área central de conteúdo */
+.conteudo-centralizado {
+    display: flex;
+    flex-direction: column; /* Empilha os blocos verticalmente */
+    gap: 30px; /* Espaçamento entre os blocos */
+}
+
+/* Estilo para o título principal "Institucional" */
+.institucional-texto h2 {
+    text-transform: uppercase; /* Todo em maiúsculo */
+    text-align: center; /* Centraliza o título */
+    font-size: 2rem; /* Tamanho maior para destaque */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor mais escura */
+    margin-bottom: 30px; /* Espaçamento abaixo do título */
+}
+
+/* Estilo para cada bloco na lista institucional */
+.institucional-lista {
+    background-color: #fff; /* Fundo branco para os blocos */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda sutil ao redor dos blocos */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
+}
+
+/* Estilo para os títulos dentro de cada bloco */
+.institucional-lista .titulo {
+    text-transform: capitalize; /* Estilo CamelCase */
+    text-align: center; /* Centraliza o texto do título */
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    font-weight: 600; /* Peso intermediário */
+    color: #444; /* Cor do texto */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+/* Estilo para o texto dentro de cada bloco */
+.institucional-lista .texto {
+    text-align: justify; /* Justifica o texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    line-height: 1.6; /* Altura das linhas para melhor legibilidade */
+    color: #555; /* Cor do texto */
+    margin: 0; /* Remove margens extras */
+}
+
+/* Negrito para texto destacado nos títulos */
+.titulo-negrito {
+    font-weight: bold; /* Negrito */
+    color: #222; /* Cor levemente mais escura */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .conteudo-centralizado {
+        gap: 20px; /* Reduz o espaçamento entre os blocos em telas menores */
+    }
+
+    .institucional-lista {
+        padding: 15px; /* Reduz o padding em telas menores */
+    }
+
+    .institucional-texto h2 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título para telas menores */
+    }
+
+    .institucional-lista .titulo {
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+    }
+
+    .institucional-lista .texto {
+        font-size: 0.95rem; /* Reduz ligeiramente o tamanho do texto */
+    }
+}
+
+.institucional {
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    padding: 40px; /* Espaçamento interno para afastar conteúdo das bordas */
+    margin: 20px 10%; /* Margem de 10% nas laterais e 20px acima e abaixo */
+    border-radius: 10px; /* Cantos arredondados para os blocos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor */
+}

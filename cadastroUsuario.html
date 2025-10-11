@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/cadastroUsuario.css">
+</head>
+<body>
+    <main>
+        <div class="main-usuario">
+            <div class="login-card">
+                <form id="signupForm">
+                    <ul class="usuario">
+                        <li class="cadastro-usuario">
+                            <label class="usuario-label" id="fotoLabel" for="foto">Foto de perfil</label>
+                            <img id="profilePreview" src="img/foto-perfil-generica.jpg" alt="Pré-visualização da foto de perfil">
+                            <!-- Input real escondido -->
+                            <input class="usuario-input-hidden" type="file" id="foto" name="foto" accept="image/*">
+                            <!-- Botão customizado -->
+                            <button id="customFileButton" type="button">Selecione uma foto</button>
+                            <!-- Mensagem de arquivo selecionado -->
+                            <span id="fileName">Nenhum arquivo selecionado</span>
+                        </li>
+                        <li class="cadastro-usuario">
+                            <label class="usuario-label" for="fullName">Nome Completo</label>
+                            <input class="usuario-input" type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" required>
+                        </li>
+                        <li class="cadastro-usuario">
+                            <label class="usuario-label" for="email">E-mail</label>
+                            <input class="usuario-input" type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                        </li>
+                        <li class="cadastro-usuario">
+                            <label class="usuario-label" for="password">Senha</label>
+                            <input class="usuario-input" type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                        </li>
+                        <li class="cadastro-usuario">
+                            <label class="usuario-label" for="confirmPassword">Confirme a Senha</label>
+                            <input class="usuario-input" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+                        </li>
+                        <li class="cadastro-usuario">
+                            <button class="usuario-botao" type="submit">Cadastrar</button>
+                        </li>
+                    </ul>
+                </form>
+                <p class="signup-text", id="comeback">Já tem conta? <a href="login.html" class="signup-link", id="imhere">Entre aqui</a></p>
+            </div>
+        </div>
+    </main>
+    <script src="JS/script_signup.js"></script>
+</body>
+</html>

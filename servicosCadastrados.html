@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPX</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html"><img src="img/logoMaoObra.png" alt="Logo Mãos a Obra" class="logo"> </a>
+        <div class="menu">
+            <ul class="menu-lista">
+                <li class="menu-selecoes">
+                    <h3><a href="index.html">Página Inicial</a></h3>
+                </li>
+                <li class="menu-selecoes">
+                    <h3><a href="institucional.html">Institucional</a></h3>
+                </li>
+                <li class="menu-selecoes">
+                    <h3><a href="perfilUsuario.html">Meu Perfil</a></h3>
+                </li>
+                <li class="menu-selecoes">
+                    <h3><a href="login.html">Login</a></h3>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="servicos">
+            <h2>Bem-vindo, <span id="loggedUserName"></span></h2>
+            <div>
+                <li class="perfil-lista">
+                    <img id="profilePreview" src="img/foto-perfil-generica.jpg" alt="Pré-visualização da foto de perfil">
+                    <label class="usuario-label" id="fotoLabel" for="foto">Foto do Anúncio</label>
+                    <input class="usuario-input-hidden" type="file" id="foto" name="foto" accept="image/*" required>
+                    <button id="customFileButton" type="button">Selecione uma foto</button>
+                    <span id="fileName">Nenhum arquivo selecionado</span>
+                </li>
+            </div>
+            <div>
+                <ul class="servicos-informacoes">
+                    <li class="servicos-lista">
+                        <label class="servicos-label" for="tipoServico">Tipo de Serviço</label>
+                        <span class="servicos-text" id="servico">Tipo de Serviço Aqui</span>
+                    </li>
+                    <li class="servicos-lista">
+                        <label class="servicos-label" for="descricaoServico">Descrição do Serviço</label>
+                        <span class="servicos-text" id="descricao">Descrição do Serviço Aqui</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="rodape">
+        <ul class="rodape-lista">
+            <li class="lista-link">
+                <p class="rodape-texto">® 2025 Conecta Mulher.</p>
+            </li>
+            <li class="lista-link">
+                <a href="#">Idioma</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Termos</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Privacidade</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Sobre a empresa</a>
+            </li>
+            <li class="lista-link">
+                <a href="#">Ajuda</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="JS/load_services.js"></script>
+</body>
+
+</html>

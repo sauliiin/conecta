@@ -1,0 +1,150 @@
+@import url("login.css");
+@import url("header.css");
+@import url("paginaInicial.css");
+@import url("cadastroUsuario.css");
+@import url("cadastroVeiculo.css");
+@import url("cadastrarServicos.css");
+@import url("perfilUsuario.css");
+@import url("rodape.css");
+@import url("institucional.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+    --cor-de-fundo: #f3ecfa;
+    --branco: #FFFFFF;
+    --azul-claro: #AFDDFF;
+    --azul-escuro:#102842;
+    --azul: #60B5FF;
+    --vermelho: #FF0000;
+    --azul-desgrade:  linear-gradient(98deg, #011F26 35.49%, #025E73 165.37%);
+    --fonte-principal: 'Poppins', sans-serif;    
+    --fonte-secundaria: 'Josefin Sans', sans-serif;
+    --preto: #000000;
+    --cinza: #bdc0c5;
+    --bege: #BFB78F;
+    --laranja: #FF9149;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: 400;  
+}
+
+/* Estilo para a estrutura principal */
+.body-perfil {
+    display: flex; /* Define um layout flexível para alinhar os elementos horizontalmente */
+    justify-content: space-between; /* Espaçamento uniforme entre os blocos */
+    gap: 20px; /* Espaçamento entre os blocos */
+    padding: 20px; /* Espaçamento interno do contêiner */
+}
+
+/* Estilo para os blocos */
+.perfil, .servico-cadastrado {
+    background-color: var(--branco); /* Fundo branco */
+    border: 1px solid var(--cinza); /* Borda cinza clara */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 18px 18px rgba(0, 0, 0, 0.493); /* Sombra suave */
+    padding: 20px; /* Espaçamento interno */
+    width: 48%; /* Cada bloco ocupa 48% da largura do contêiner (ajusta conforme necessário) */
+    margin-left: 0%;
+}
+
+/* Estilo para elementos internos do bloco */
+.perfil ul, .servico-cadastrado ul {
+    list-style: none; /* Remove os marcadores das listas */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+.perfil-botao, .servicos-botao {
+    background-color: var(--azul); /* Cor de fundo azul */
+    color: var(--branco); /* Texto branco */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 15px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de "mão" ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+.perfil-botao:hover, .servicos-botao:hover {
+    font-weight: bold; /* Muda a cor de fundo ao passar o mouse */
+    text-shadow: 1px 1px 3px #001f3f;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para inputs */
+.perfil-input, .servicos-input {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 10px; /* Espaçamento interno */
+    margin: 8px; /* Margem entre os campos */
+    border: 1px solid var(--cinza); /* Borda cinza clara */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura */
+}
+
+/* Sombra e alinhamento do título */
+.perfil h3, .servico-cadastrado h3 {
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    font-weight: 500; /* Negrito médio */
+    color: var(--azul-escuro); /* Cor azul escuro */
+    text-align: center; /* Centraliza o texto */
+}
+
+.servico-cadastrado{
+    margin-top: 5%;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .body-perfil {
+        flex-direction: column; /* Alinha os blocos verticalmente em telas menores */
+        gap: 15px; /* Reduz o espaçamento entre os blocos */
+    }
+
+    .perfil, .servico-cadastrado {
+        width: 100%; /* Cada bloco ocupa 100% da largura do contêiner */
+    }
+}
+
+.rodape {
+    margin-top: 18%;
+    margin-bottom: 5%;
+}
+
+.perfil-input{
+    background-color: #bdc0c565;
+    border-radius: 12px;
+}
+
+.perfil{
+    margin-top: 5%;
+}
+
+#descricao {
+    height: 150px;
+}
+
+/* Estilo do círculo ovalado com a inicial do usuário */
+.user-initial-circle {
+    margin-top: -15px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffa200; /* Cor de fundo laranja */
+    color: #fff; /* Cor do texto branco */
+    border-radius: 50%; /* Deixa o formato circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Tamanho da letra */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+    transition: transform 0.3s ease; /* Efeito de transição */
+}
+
+.user-initial-circle:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente no hover */
+}
