@@ -105,6 +105,10 @@ body {
     margin-bottom: 5px;
 }
 
+.input{
+    color: #333;
+}
+
 .servicos-input, .perfil-input {
     background-color: var(--cinza-claro);
     border: 1px solid var(--cinza-borda);
