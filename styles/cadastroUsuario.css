@@ -51,6 +51,12 @@ input[type="text"] {
     width: 100%;
 }
 
+.login-card {
+    background-color: #5a009600;
+    border-color: #00000000;
+    box-shadow: none;
+}
+
 .usuario-botao:hover {
     transition: 0.6s;
     box-shadow: 0px 0px 4px 2px #000000;
@@ -84,6 +90,16 @@ input[type="text"] {
 .usuario-input[type="file"] {
     text-align: center;
     margin-top: 10px;
+}
+
+.menu-selecoes{
+    font-size: large;
+    font-weight: bold;
+    margin-right: 60px;
+}
+
+.usuario-input{
+    background-color: aliceblue;
 }
 
 #fotoLabel {
@@ -150,4 +166,6 @@ input[type="text"] {
     font-size: 14px;
     color: #555;
 }
+
+
 

@@ -1,12 +1,12 @@
 // --- INICIALIZAÇÃO E CONFIGURAÇÃO DO FIREBASE ---
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDM66hHUOkfAP3FrnfcQaF2aRiY_2jhnTM",
-    authDomain: "controle-de-ferias-45d25.firebaseapp.com",
-    projectId: "controle-de-ferias-45d25",
-    storageBucket: "controle-de-ferias-45d25.appspot.com",
-    messagingSenderId: "298345781850",
-    appId: "1:298345781850:web:0d21bb20a7fad821de9663"
+    apiKey: "AIzaSyDM66hHUOkfAP3FrnfcQaF2aRiY_2jhnTM",
+    authDomain: "controle-de-ferias-45d25.firebaseapp.com",
+    projectId: "controle-de-ferias-45d25",
+    storageBucket: "controle-de-ferias-45d25.firebasestorage.app",
+    messagingSenderId: "298345781850",
+    appId: "1:298345781850:web:0d21bb20a7fad821de9663"
 };
 
 // Inicializar o Firebase
@@ -585,7 +585,7 @@ async function loadUsersIntoFields(filter = "", singleUser = null) {
         userBlock.appendChild(userImage);
 
         const userName = document.createElement("h3");
-        userName.textContent = `Nome do Prestador: ${user.fullName}`;
+        userName.textContent = `${user.fullName}`;
         userBlock.appendChild(userName);
 
         const fieldList = document.createElement("ul");
@@ -611,10 +611,10 @@ async function loadUsersIntoFields(filter = "", singleUser = null) {
         fields.forEach(field => {
             if (field.value) {
                 const fieldItem = document.createElement("li");
-                fieldItem.classList.add("perfil-lista");
-                fieldItem.innerHTML = `
+                fieldItem.classList.add("perfil-lista", "campo-contato");               
+                fieldItem.innerHTML = `
                     <label class="perfil-label">${field.label}</label>
-                    <button class="perfil-input" type="button" disabled>${field.value}</button>
+                                       <button class="perfil-input" type="button" disabled>${field.value}</button>
                 `;
                 fieldList.appendChild(fieldItem);
             }

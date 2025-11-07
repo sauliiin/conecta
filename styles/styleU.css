@@ -28,20 +28,20 @@ body {
 
 /* Estilo para a estrutura principal */
 .body-perfil {
-    display: flex; /* Define um layout flexível para alinhar os elementos horizontalmente */
-    justify-content: space-between; /* Espaçamento uniforme entre os blocos */
-    gap: 20px; /* Espaçamento entre os blocos */
-    padding: 20px; /* Espaçamento interno do contêiner */
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+    padding: 20px; 
 }
 
 /* Estilo para os blocos */
 .perfil, .servico-cadastrado {
-    background-color: var(--branco); /* Fundo branco */
-    border: 1px solid var(--cinza); /* Borda cinza clara */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 18px 18px rgba(0, 0, 0, 0.493); /* Sombra suave */
-    padding: 20px; /* Espaçamento interno */
-    width: 48%; /* Cada bloco ocupa 48% da largura do contêiner (ajusta conforme necessário) */
+    background-color: var(--branco);
+    border: 1px solid var(--cinza); 
+    border-radius: 10px; 
+    box-shadow: 0 18px 18px rgba(0, 0, 0, 0.493);
+    padding: 20px;
+    width: 48%; 
     margin-left: 0%;
 }
 
@@ -51,8 +51,8 @@ body {
 
 .menu-lista {
     display: flex;
-    align-items: center; /* Centraliza verticalmente todos os itens da lista */
-    gap: 20px;         /* Espaço entre os itens */
+    align-items: center; 
+    gap: 20px;        
     list-style: none;
     margin: 0;
     padding: 0;
@@ -73,21 +73,21 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px; /* Espessura da linha (ajuste se quiser mais fina) */
-    background-color: #E5B3FF; /* A cor lilás clara que você gostava */
-    transform: scaleX(0); /* Começa com largura zero (invisível) */
-    transform-origin: right; /* Faz ela recolher para a direita ao sair */
+    height: 3px; 
+    background-color: #E5B3FF; 
+    transform: scaleX(0);
+    transform-origin: right; 
     transition: transform 0.3s ease-out;
 }
 
 /* Quando passa o mouse */
 .menu-selecoes a:hover {
-    color: #E5B3FF; /* Muda a cor do texto também */
+    color: #E5B3FF; 
 }
 
 .menu-selecoes a:hover::after {
-    transform: scaleX(1); /* Faz a linha crescer para 100% */
-    transform-origin: left; /* Faz ela nascer da esquerda para a direita */
+    transform: scaleX(1); 
+    transform-origin: left; 
 }
 
 /* 2. A GAMBIARRA do Círculo */

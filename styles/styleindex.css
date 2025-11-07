@@ -343,7 +343,7 @@ input[type="date"] {
 .servicos-informacoes {
     list-style: none;
     width: 100%;
-    padding: 0;
+    padding: 0px;
     margin: 0;
 }
 
@@ -354,23 +354,21 @@ input[type="date"] {
 
 .perfil-label {
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     color: #555;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: -1px;
 }
 
-.perfil-label[for="servico"] {
-    color: var(--cor-roxa);
-    text-align: center;
-    font-weight: bold;
+.perfil-lista.campo-contato {
+    margin-bottom: -10px; /* Era 12px. Ajuste para 2px se quiser ainda mais colado */
 }
 
 .perfil-input {
     background-color: var(--cinza-claro);
     border: 1px solid var(--cinza-borda);
     border-radius: 5px;
-    padding: 10px;
+    padding: 8px;
     width: 100%;
     box-sizing: border-box;
     color: var(--cor-texto);
