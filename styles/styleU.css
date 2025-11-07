@@ -1,12 +1,5 @@
-@import url("login.css");
 @import url("header.css");
-@import url("paginaInicial.css");
 @import url("cadastroUsuario.css");
-@import url("cadastroVeiculo.css");
-@import url("cadastrarServicos.css");
-@import url("perfilUsuario.css");
-@import url("rodape.css");
-@import url("institucional.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
@@ -52,11 +45,72 @@ body {
     margin-left: 0%;
 }
 
+.logo {
+    height: 100px;
+}
+
+.menu-lista {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente todos os itens da lista */
+    gap: 20px;         /* Espaço entre os itens */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-selecoes a {
+    color: white;
+    text-decoration: none;
+    position: relative; /* Essencial para o efeito funcionar */
+    padding-bottom: 5px; /* Espaço para a linha não colar no texto */
+    transition: color 0.3s ease;
+}
+
+/* Cria a linha invisível debaixo do texto */
+.menu-selecoes a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Espessura da linha (ajuste se quiser mais fina) */
+    background-color: #E5B3FF; /* A cor lilás clara que você gostava */
+    transform: scaleX(0); /* Começa com largura zero (invisível) */
+    transform-origin: right; /* Faz ela recolher para a direita ao sair */
+    transition: transform 0.3s ease-out;
+}
+
+/* Quando passa o mouse */
+.menu-selecoes a:hover {
+    color: #E5B3FF; /* Muda a cor do texto também */
+}
+
+.menu-selecoes a:hover::after {
+    transform: scaleX(1); /* Faz a linha crescer para 100% */
+    transform-origin: left; /* Faz ela nascer da esquerda para a direita */
+}
+
+/* 2. A GAMBIARRA do Círculo */
+.user-initial-circle {
+    width: 45px;
+    height: 45px;
+    background-color: var(--cor-destaque);
+    color: var(--branco);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--sombra);
+    padding-bottom: 2px; 
+    padding-left: 10px; 
+}
+
+
 /* Estilo para elementos internos do bloco */
 .perfil ul, .servico-cadastrado ul {
-    list-style: none; /* Remove os marcadores das listas */
-    padding: 0; /* Remove o padding padrão */
-    margin: 0; /* Remove a margem padrão */
+    list-style: none; 
+    padding: 0;
+    margin: 0; 
 }
 
 .perfil-botao, .servicos-botao {

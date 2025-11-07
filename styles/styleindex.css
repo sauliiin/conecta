@@ -1,10 +1,4 @@
-@import url("login.css");
-@import url("header.css");
-@import url("paginaInicial.css");
-@import url("cadastroUsuario.css");
-@import url("servicosCadastrados.css");
-@import url("perfilUsuario.css");
-@import url("rodape.css");
+/* --- Imports e Root (do seu CSS anterior) --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
@@ -14,11 +8,14 @@
     --cinza-claro: #F9F9F9;
     --cinza-borda: #DDD;
     --sombra: rgba(0, 0, 0, 0.1);
-    --fonte-principal: 'Poppins', sans-serif;    
-}
-
-.container{
-    margin-top: -25px;
+    --fonte-principal: 'Poppins', sans-serif;
+    --cor-destaque: #ffa200;
+    --cor-texto: #333;
+    --cor-roxa: #5a0096;
+    --azul-desgrade: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    --vermelho: #EB4B4B;
+    --cinza: #EBECEE;
+    --azul: #002F52;
 }
 
 body {
@@ -26,66 +23,323 @@ body {
     font-family: var(--fonte-principal);
     margin: 0;
     padding: 0;
+    color: var(--cor-texto);
 }
 
-/* Container Principal */
-.main-index {
+/* --- HEADER --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #5a0096;
+    height: 120px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.container-titulo {
+    margin-top: 2em;
+}
+
+.logo {
+    padding: 1em;
+    height: 100px;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+.titulo_veiculo {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anuncio {
+    padding: 10px;
+    transition: 0.6s;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.anuncio:hover {
+    transition: 0.6s;
+    border-radius: 22px;
+    background-color: var(--cinza);
+    font-size: 15px;
+}
+
+.botao {
+    display: none;
+    margin: 2em;
+}
+
+.menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.botao:checked~.rotulo>.menu-hamburguer {
+    background-image: url("../img/menu_branco.svg");
+}
+
+.botao:checked~.rotulo {
+    background: var(--azul-desgrade);
+}
+
+.botao:checked~.lista-menu {
+    display: block;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+    background-color: var(--branco);
+}
+
+.lista-menu__sair,
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista-menu__sair {
+    color: var(--vermelho);
+}
+
+.lista-menu__item {
+    background: var(--azul-desgrade);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+}
+
+.input:hover {
+    transition: 0.6s;
+    background-color: var(--cor-de-fundo);
+    border-radius: 12px;
+}
+
+.perquisa-carro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-pesquisa {
+    display: flex;
+    background-color: var(--branco);
+    border-radius: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 8px 10px;
+}
+
+.input-filtro {
+    display: flex;
+    margin-right: 10px;
+    position: relative;
+    justify-content: center;
+}
+
+.label-filtro {
+    font-size: 11px;
+    color: var(--branco);
+    text-transform: uppercase;
+    font-weight: 500;
+    position: absolute;
+    top: -18px;
+    left: 10px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: var(--branco);
+    font-size: 0.95rem;
+}
+
+input[type="text"] {
+    width: 200px;
+}
+
+input[type="date"] {
+    width: 150px;
+}
+
+.botao-pesquisar {
+    background-color: var(--azul);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-pesquisar {
+    width: 20px;
+    height: 20px;
+}
+
+.menu {
+    text-align: center;
+    padding: 0 1em;
+}
+
+.menu-lista {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px; /* Espaçamento entre os quadros */
-    justify-content: center; /* Centraliza os quadros */
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Quadros de Usuário */
-.user-block {
-    background-color: var(--branco);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px var(--sombra);
-    width: 450px; /* Largura fixa de 20% da página */
-    aspect-ratio: 2 / 1; /* Largura é 50% da altura */
+.menu-selecoes {
+    margin: 0 1em;
+    font-size: 1rem;
+    color: white;
+}
+
+.menu-selecoes h3 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.menu-selecoes a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.menu-selecoes a:hover {
+    color: #E5B3FF;
+}
+
+.menu-selecoes a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #E5B3FF;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.menu-selecoes a:hover::after {
+    transform: scaleX(1);
+}
+
+/* --- FIM DO HEADER --- */
+
+
+/* --- SEÇÃO INTRODUTÓRIA (Ícones e Texto) --- */
+
+.main-index>div:first-child {
+    background-color: var(--cor-de-fundo);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 10px;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.lista-apresentacao {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    text-align: center;
+    width: 200px;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.icones-inicial {
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+}
+
+.texto-inicial {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* --- CONTAINER PRINCIPAL (CARDS) --- */
+.main-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.user-block {
+    background-color: var(--branco);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--sombra);
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .user-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagem do Usuário */
 .user-image {
-    width: 60%; /* A largura permanece 60% da largura do quadro */
-    height: 200px; /* Ajusta automaticamente a altura */
-    aspect-ratio: 3 / 4; /* Define uma proporção menor para reduzir a altura */
-    border-radius: 10px;
-    border: 3px solid var(--cinza-borda);
-    margin-top: 20px;
-    object-fit: cover; /* Garante que a imagem seja cortada corretamente */
-    margin-bottom: 10px;
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
-/* Título */
 .user-block h3 {
-    background-color: var(--branco);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px var(--sombra);
-    width: 350px; /* Largura fixa */
-    height: auto; /* Altura automática para permitir mais linhas */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: auto; /* Adiciona rolagem, caso necessário */
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cor-roxa);
+    margin: 0 0 15px 0;
+    padding: 0;
+    text-align: center;
 }
 
-/* Lista de Informações */
 .servicos-informacoes {
     list-style: none;
     width: 100%;
@@ -93,223 +347,306 @@ body {
     margin: 0;
 }
 
-.servicos-lista, .perfil-lista {
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-.servicos-label, .perfil-label {
-    font-weight: bold;
-    color: #333;
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-.input{
-    color: #333;
-}
-
-.servicos-input, .perfil-input {
-    background-color: var(--cinza-claro);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 5px;
-    padding: 8px;
-    width: 100%;
-    color: #555;
-    cursor: not-allowed;
-    text-align: left;
-}
-
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .user-block {
-        width: 40%; /* 2 quadros por linha em telas médias */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .user-block {
-        width: 80%; /* 1 quadro por linha em telas pequenas */
-    }
-}
-
-.menu-selecoes {
-    font-size: 20px;
-    color: white;
-
-}
-.menu-selecoes:hover{
-    color: #E5B3FF;
-}
-
-.lista-apresentacao {
-    display: flex;
-    flex: 1;
-    width: 15%;
-    margin-left: 20px;
-    margin-right: 20px;
-    gap: 10px;
-    height: 140px;
-    flex-direction: column;
-    align-items: center; /* Centraliza os itens na direção horizontal */
-    text-align: justify; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento entre os itens da lista */
-}
-
-.icones-inicial {
-    margin-bottom: 10px; /* Espaçamento abaixo do ícone */
-    width: 60px; /* Ajuste o tamanho do ícone conforme necessário */
-    height: 60px;
-}
-
-.texto-inicial {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5; /* Para melhorar a legibilidade */
-    text-align: justify; /* Centraliza o texto */
-    margin: 0;
-    width: 80%;
-}
-
-.lista {
-    display: flex; /* Transforma a lista em um layout flexível */
-    justify-content: space-between; /* Garante que os blocos sejam distribuídos */
-    gap: 25px; /* Aumenta o espaçamento horizontal entre os blocos */
-    padding: 10px;
-    margin: 0;
-    list-style: none; /* Remove os marcadores da lista */
-}
-
-/* Imagem de Avaliação Centralizada */
-.user-rating-centralizada {
-    width: 80px; /* Define o tamanho desejado da imagem */
-    height: 80px; /* Define o tamanho desejado da imagem */
-    margin: 10px auto; /* Centraliza horizontalmente */
-    display: block; /* Garante que seja tratado como bloco */
-    object-fit: contain; /* Garante que a imagem mantenha suas proporções */
-}
-
-/* Campo de Avaliação Alinhado */
 .perfil-lista {
-    margin-bottom: 15px; /* Espaçamento entre os campos */
-    text-align: center; /* Centraliza o texto e a imagem */
+    margin-bottom: 12px;
+    text-align: left;
 }
 
 .perfil-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.perfil-label[for="servico"] {
+    color: var(--cor-roxa);
+    text-align: center;
     font-weight: bold;
-    color: #333;
-    display: block; /* Garante que a label fique em uma nova linha */
-    margin-bottom: 5px;
 }
 
-/* Sobrescrever as regras globais do reset */
+.perfil-input {
+    background-color: var(--cinza-claro);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--cor-texto);
+    cursor: not-allowed;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.user-rating-centralizada {
+    width: 120px;
+    height: auto;
+    margin: 5px auto 0 auto;
+    display: block;
+    object-fit: contain;
+}
+
 img.user-rating-centralizada {
-    width: 200px !important; /* Força o tamanho da largura */
-    height: 80px !important; /* Força o tamanho da altura */
+    width: 120px;
+    height: auto;
 }
 
-/* Formulário de Pesquisa */
-.form-pesquisa {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaçamento entre os elementos */
+.perfil-lista.avaliacao {
+    text-align: center;
 }
 
-/* Campo de Busca */
-.input-filtro {
-    flex: 1; /* Faz o campo de busca ocupar o espaço disponível */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Contêiner dos Botões */
-.botoes-container {
-    display: flex;
-    gap: 10px; /* Espaçamento entre os botões */
-}
-
-/* Botão de Atualizar */
 .botao-atualizar {
     background-color: var(--branco);
-    border: 1px solid var(--cinza-borda);
-    border-radius: 100%;
-    padding: 10px;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 50%;
+    padding: 8px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px; /* Mesma altura do campo de busca */
-    width: 50px; /* Mesma largura do botão de busca */
+    height: 44px;
+    width: 44px;
+    box-sizing: border-box;
     box-shadow: 0 2px 4px var(--sombra);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
 }
 
 .botao-atualizar:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 0 4px 8px var(--sombra);
+    border-color: var(--cor-roxa);
 }
 
 .img-atualizar {
-    width: 100%; /* Imagem ocupa todo o botão */
-    height: auto;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
+/* --- MODAL DE AVALIAÇÃO ESTILIZADO --- */
 .rating-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .rating-modal-content {
-    background: #fff;
-    padding: 30px; /* Aumentar o padding para mais espaço interno */
-    border-radius: 20px; /* Suavizar os cantos */
+    background: var(--branco);
+    padding: 35px;
+    border-radius: 16px;
     text-align: center;
-    box-shadow: 20px 20px 60px #ffa2006b; /* Aumentar a sombra */
-    width: 500px; /* Aumentar largura do quadro */
-    line-height: 1.8; /* Aumentar o espaçamento entre linhas */
-    font-size: 1.2rem; /* Aumentar o tamanho do texto */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+}
+
+.rating-modal-content h2 {
+    font-size: 1.5rem;
+    color: var(--cor-roxa);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.rating-modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#rating-input {
+    width: 100px;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid var(--cinza-borda);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#rating-input:focus {
+    border-color: var(--cor-destaque);
+    outline: none;
+}
+
+.rating-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .rating-buttons button {
-    margin: 10px; /* Aumentar o espaçamento entre os botões */
-    padding: 15px 30px; /* Aumentar o tamanho dos botões */
-    border: 2px solid #ffa200; /* Adicionei uma borda laranja para combinar com o hover */
-    border-radius: 60px;
+    padding: 12px 25px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 1rem; /* Aumentar o texto nos botões */
-    transition: background 0.5s ease, color 0.5s ease, transform 0.3s ease; /* Adiciona transições suaves */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.rating-buttons button:hover {
-    background: #ffa200; /* Cor de fundo no hover */
-    color: #fff; /* Altera a cor do texto no hover */
-    transform: scale(1.1); /* Aumenta o botão ligeiramente */
+#confirm-rating {
+    background: var(--cor-destaque);
+    color: var(--branco);
+    border: 2px solid var(--cor-destaque);
 }
 
-/* Estilo do círculo ovalado com a inicial do usuário */
+#confirm-rating:hover {
+    background: #e69200;
+    border-color: #e69200;
+    transform: scale(1.05);
+}
+
+#cancel-rating {
+    background: var(--branco);
+    color: var(--cor-destaque);
+    border: 2px solid var(--cor-destaque);
+}
+
+#cancel-rating:hover {
+    background: #fff8eb;
+    transform: scale(1.05);
+}
+
+/* Letra centralizada no círculo - CORRIG */
 .user-initial-circle {
-    margin-top: -15px;
-    width: 50px;
-    height: 50px;
-    background-color: #ffa200; /* Cor de fundo laranja */
-    color: #fff; /* Cor do texto branco */
-    border-radius: 50%; /* Deixa o formato circular */
+    width: 45px;
+    height: 45px;
+    background-color: var(--cor-destaque);
+    color: var(--branco);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px var(--sombra);
+    transition: transform 0.3s ease;
+    font-size: 19.3px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 15px;
+}
+
+.user-initial-circle:hover {
+    transform: scale(1.1);
+}
+
+/* --- ESTILOS DO RODAPÉ --- */
+.rodape {
+    background-color: #333;
+    color: var(--cinza-claro);
+    padding: 20px 4%;
+    margin-top: 40px;
+}
+
+.rodape-lista {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem; /* Tamanho da letra */
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-    transition: transform 0.3s ease; /* Efeito de transição */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px 25px;
 }
 
+.lista-link {
+    font-size: 0.9rem;
+}
+
+.lista-link a {
+    color: var(--cinza-claro);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lista-link a:hover {
+    color: var(--cor-destaque);
+}
+
+.rodape-texto {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- OTIMIZAÇÃO MOBILE GERAL --- */
+@media screen and (max-width: 768px) {
+
+    .header {
+        padding: 10px 4%;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    .perquisa-carro {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .botao {
+        display: block;
+        margin: 0;
+    }
+
+    .menu-hamburguer {
+        margin: 0;
+    }
+
+    .botao:checked~.rotulo {
+        margin: 0;
+    }
+
+    .lista-menu {
+        right: 0;
+        width: 70vw;
+    }
+
+    .lista {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .lista-apresentacao {
+        width: 80%;
+        text-align: center;
+    }
+
+    .texto-inicial {
+        text-align: center;
+    }
+
+    .user-block {
+        width: 90%;
+    }
+
+    .main-index {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .rodape-lista {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        height: 70px;
+    }
+
+    .user-block {
+        width: 95%;
+    }
+}

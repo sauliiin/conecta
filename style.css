@@ -15,9 +15,9 @@ body {
     background-color: #fdfdfd;
 }
 
-.logo-img{
+.logo-img {
     padding: 1em;
-    height: 100px;   
+    height: 100px;
 }
 
 /* --- CABEÇALHO FIXO (HEADER) --- */
@@ -32,7 +32,7 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between;  
+    justify-content: space-between;
     background-color: transparent;
     box-shadow: none;
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
@@ -40,7 +40,7 @@ body {
 
 .header-fixo.scrolled {
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
-    background-color:#5a0096;
+    background-color: #5a0096;
 }
 
 .header-fixo nav a {
@@ -101,9 +101,9 @@ section {
 }
 
 .secao-topo {
-    min-height: calc(100vh - 120px); 
+    min-height: calc(100vh - 120px);
     padding: 0;
-    position: relative; /* Essencial para o posicionamento absoluto dos filhos */
+    position: relative;
     scroll-margin-top: 120px
 }
 
@@ -130,7 +130,23 @@ section {
     background-image: url('img/mulheres1.png');
     background-size: cover;
     background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
+
+.imagem-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
 
 /* --- ANIMAÇÃO DE REVELAÇÃO (SCROLL REVEAL) --- */
 .reveal {
@@ -165,7 +181,7 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%; /* Evita que o texto quebre em telas muito estreitas */
+    width: 90%;
     max-width: 800px;
     margin: 0;
     font-size: 3.5rem;
@@ -194,9 +210,8 @@ section {
     transition: background-color 1s ease;
 }
 
-/* Ajuste para subir o texto final, como solicitado anteriormente */
+/* Ajuste para subir o texto final */
 .secao-topo.video-ended-state #h1-final {
-    /* Move o texto final 15% da altura da tela para cima, a partir do centro */
     transform: translate(-50%, -50%) translateY(-15vh);
 }
 
@@ -212,11 +227,77 @@ section {
 }
 
 #h1-second {
-  margin: 25% auto 0;        /* top 20%, centraliza horizontal com auto nas laterais */
-  font-size: 2.2rem;
-  color: #fff;
-  max-width: 90%;          /* evita ficar muito largo em telas grandes */
-  text-align: center;        /* centraliza o texto dentro do bloco */
-  text-align: justify;
-  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7); 
+    margin: 0;
+    padding: 2em;
+    position: relative;
+    z-index: 2;
+    font-size: 2.2rem;
+    color: #fff;
+    max-width: 70%;
+    text-align: center;
+    line-height: 1.6;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* --- OTIMIZAÇÃO PARA MOBILE --- */
+
+@media (max-width: 768px) {
+
+    .header-fixo {
+        height: 80px;
+        padding: 0 3%;
+    }
+
+    .logo-img {
+        height: 60px;
+        padding: 0.5em;
+    }
+
+    .header-fixo nav {
+        display: none;
+    }
+
+    .conteudo-principal {
+        padding-top: 80px;
+    }
+
+    .secao-topo {
+        scroll-margin-top: 80px;
+        min-height: calc(100vh - 80px);
+    }
+
+    .secao-topo h1 {
+        font-size: 2.2rem;
+        width: 95%;
+    }
+
+    #h1-inicial,
+    #h1-final {
+        font-size: 2.5rem;
+    }
+
+    #h1-second {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        padding: 1em;
+    }
+
+    .imagem-container {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+@media (max-width: 480px) {
+    .secao-topo h1 {
+        font-size: 1.8rem;
+    }
+
+    #h1-inicial,
+    #h1-final {
+        font-size: 2rem;
+    }
+
+    #h1-second {
+        font-size: 1.2rem;
+    }
 }
